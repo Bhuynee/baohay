@@ -1,0 +1,36 @@
+
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Thông báo giao dịch</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body onload="playSound(); showPopup();">
+  <div class="receipt">
+    <h2>Giao dịch thành công</h2>
+    <p>Số tiền: <span class="amount">1.000.000đ</span></p>
+    <p>Người nhận: <strong>Lê Minh Tâm</strong></p>
+    <p>Nội dung: Thanh toán GÓI MỲ HẢO HẢO VIP</p>
+    <p>Phương thức: Ví điện tử</p>
+    <p class="note">* Đây là trang troll, không phải hóa đơn thật.</p>
+  </div>
+  <div class="popup" id="popup">
+    💸 Bạn vừa bị trừ 1 triệu đồng!
+  </div>
+  <audio id="sound" src="sound.mp3" preload="auto"></audio>
+  <script>
+    function playSound() {
+      document.getElementById("sound").play();
+    }
+    function showPopup() {
+      const popup = document.getElementById("popup");
+      popup.style.display = "block";
+      setTimeout(() => {
+        popup.style.display = "none";
+      }, 5000);
+    }
+  </script>
+</body>
+</html>
